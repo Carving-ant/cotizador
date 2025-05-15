@@ -10,7 +10,7 @@
   <style>
     body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
     header { background: linear-gradient(135deg, #000, #c00); color: white; text-align: center; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
-    header img { max-width: 120px; margin-bottom: 10px; filter: drop-shadow(2px 2px 4px #000); }
+    header img { max-width: 150px; margin-bottom: 10px; filter: drop-shadow(2px 2px 4px #000); }
     h2 { margin: 0; font-size: 28px; }
     .info { font-size: 14px; margin-top: 5px; }
     form { background: #fff; padding: 20px; max-width: 800px; margin: 20px auto; border-radius: 12px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
@@ -44,7 +44,7 @@
       </select>
     </label>
     <label>Descripción: <input type="text" id="descripcion" required></label>
-    <label>Unidad (mm): <input type="number" id="unidad" required></label>
+    <label>cantidad : <input type="number" id="unidad" required></label>
     <label>Precio Unitario ($): <input type="number" id="precio" step="0.01" required></label>
     <button type="submit" class="btn">Agregar</button>
   </form>
@@ -54,7 +54,7 @@
       <tr>
         <th>Tipo</th>
         <th>Descripción</th>
-        <th>Unidad (mm)</th>
+        <th>cantidad</th>
         <th>Precio Unitario</th>
         <th>Subtotal</th>
       </tr>
@@ -92,7 +92,7 @@
       const material = document.getElementById('material').value;
       const tipo = document.getElementById('tipo').value;
       const descripcion = document.getElementById('descripcion').value;
-      const unidad = parseFloat(document.getElementById('unidad').value);
+      const cantidad = parseFloat(document.getElementById('cantidad').value);
       const precio = parseFloat(document.getElementById('precio').value);
       const itemSubtotal = unidad * precio;
 
@@ -100,7 +100,7 @@
       row.innerHTML = `
         <td>${tipo}</td>
         <td>${descripcion}</td>
-        <td>${unidad}</td>
+        <td>${cantidad}</td>
         <td>$${precio.toFixed(2)}</td>
         <td>$${itemSubtotal.toFixed(2)}</td>
       `;
